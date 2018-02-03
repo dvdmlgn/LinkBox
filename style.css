@@ -22,3 +22,7 @@
 .cardDesc {
   padding: 3px;
 }
+
+#test {
+  visibility: hidden;
+}
