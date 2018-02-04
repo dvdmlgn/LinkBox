@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DataModel\Chapter.cs" />
     <Compile Remove="Migrations\20180204050731_Bugfix.cs" />
     <Compile Remove="Migrations\20180204050731_Bugfix.Designer.cs" />
     <Compile Remove="Migrations\20180204053756_Tidyup.cs" />
@@ -27,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="SeedData\" />
     <Folder Include="Views\my\" />
     <Folder Include="Views\Shared\" />

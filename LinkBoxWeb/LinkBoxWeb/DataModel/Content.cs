@@ -8,9 +8,8 @@ namespace LinkBoxWeb.DataModel
     public class Content
     {
         public int Id { get; set; }
-
-        public Chapter Chapter { get; set; }
-
+        public string Description { get; set; }
+        public Topic Topic { get; set; }
         public List<UserTags> Tags { get; set; }
     }
 }

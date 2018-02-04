@@ -1,0 +1,74 @@
+﻿@model LinkBoxWeb.Models.CreateContentViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#subjectSelectList").change(function () {
+            debugger;
+            var selectedSubject = $(this).children("option").filter(":selected").text();
+
+            if (selectedSubject)
+            {
+                $(this).children("optgroup").attr("disabled", "disabled");
+                var a = $("optgroup").filter(function () {
+                    return $(this).attr('label') == selectedSubject
+                });
+
+                console.log(a);
+
+                a.removeAttr("disabled");
+                
+            }
+
+            alert(selectedSubject);
+        })
+
+    });
+</script>
+
+<h2>Create your learning links and exercises</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @Html.DropDownListFor(m => m.SubjectId, Model.Subjects, new { id = "subjectSelectList" })
+            </div>
+            <div>
+                @Html.DropDownListFor(m => m.TopicId, Model.Topics)
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tags" class="control-label"></label>
+                <input asp-for="Tags" class="form-control" />
+                <span asp-validation-for="Tags" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkHref" class="control-label"></label>
+                <input asp-for="LinkHref" class="form-control" />
+                <span asp-validation-for="LinkHref" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExerciseText" class="control-label"></label>
+                <input asp-for="ExerciseText" class="form-control" />
+                <span asp-validation-for="ExerciseText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -12,9 +12,10 @@ using System;
 namespace LinkBoxWeb.Migrations
 {
     [DbContext(typeof(LinkBoxContext))]
-    partial class LinkBoxContextModelSnapshot : ModelSnapshot
+    [Migration("20180204074141_Removed Chapter")]
+    partial class RemovedChapter
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

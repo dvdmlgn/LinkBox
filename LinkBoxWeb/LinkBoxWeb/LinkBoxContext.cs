@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
@@ -17,17 +18,14 @@ namespace LinkBoxWeb
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /*
             modelBuilder.Entity<User>()
                  .HasIndex(u => u.Username)
                  .IsUnique();
-            */
         }
 
         public LinkBoxContext(DbContextOptions<LinkBoxContext> options)
             : base(options)
         {
-            /*
             this.Database.Migrate();
 
             var thisAssembly = new FileInfo(Assembly.GetExecutingAssembly().Location);
@@ -47,19 +45,31 @@ namespace LinkBoxWeb
                 {
                     this.Subjects.Add(new Subject()
                     {
-                        Name = subject
+                        Name = subject,
+                        Topics = new List<Topic>()
+                        {
+                            new Topic(){
+                                Name = $"{subject}-Topic-A",
+                            },
+
+                            new Topic(){
+                                Name = $"{subject}-Topic-B"
+                            },
+
+                            new Topic(){
+                                Name = $"{subject}-Topic-C"
+                            }
+                        }
                     });
                 }
             }
 
             this.SaveChanges();
-            */
         }
 
         public DbSet<Site> Sites { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Topic> Topics { get; set; }
-        public DbSet<Chapter> Chapters { get; set; }
         public DbSet<Content> Contents { get; set; }
         public DbSet<Link> Links { get; set; }
         public DbSet<Exercise> Exercises { get; set; }
