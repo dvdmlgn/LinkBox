@@ -25,6 +25,8 @@ namespace LinkBoxWeb.Controllers
 
                 isExercise = false,
 
+                Votes = 70,
+
                 ResourceType = "Exercise",
 
                 Content = "https://startbootstrap.com/template-categories/landing-pages/"
@@ -40,20 +42,7 @@ namespace LinkBoxWeb.Controllers
 
                 isExercise = false,
 
-                ResourceType = "Exercise",
-
-                Content = "https://startbootstrap.com/template-categories/landing-pages/"
-            });
-
-            mys.Add(new my()
-            {
-                Subject = "Maths",
-                Topic = "Algebra",
-                Chapter = "Quadratic Equations",
-
-                Description = "mathssss",
-
-                isExercise = false,
+                Votes = 54,
 
                 ResourceType = "Exercise",
 
@@ -69,6 +58,25 @@ namespace LinkBoxWeb.Controllers
                 Description = "mathssss",
 
                 isExercise = false,
+
+                Votes = 32,
+
+                ResourceType = "Exercise",
+
+                Content = "https://startbootstrap.com/template-categories/landing-pages/"
+            });
+
+            mys.Add(new my()
+            {
+                Subject = "Maths",
+                Topic = "Algebra",
+                Chapter = "Quadratic Equations",
+
+                Description = "mathssss",
+
+                isExercise = false,
+
+                Votes = 29,
                 ResourceType = "Library",
 
                 Content = "https://startbootstrap.com/template-categories/landing-pages/"
@@ -84,6 +92,8 @@ namespace LinkBoxWeb.Controllers
 
                 isExercise = true,
 
+                Votes = 24,
+
                 ResourceType = "Exercise",
 
                 Content = "https://startbootstrap.com/template-categories/landing-pages/"
@@ -98,6 +108,8 @@ namespace LinkBoxWeb.Controllers
                 Description = "mathssss",
 
                 isExercise = true,
+
+                Votes = 14,
 
                 ResourceType = "Library",
 
@@ -110,7 +122,7 @@ namespace LinkBoxWeb.Controllers
 
         public IActionResult Profile()
         {
-            return View();
+            return View(new ProfileModel());
         }
     }
 }
