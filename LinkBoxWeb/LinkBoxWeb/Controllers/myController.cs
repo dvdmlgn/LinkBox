@@ -32,7 +32,7 @@ namespace LinkBoxWeb.Controllers
 
             mys.Add(new my()
             {
-                Subject = "Maths",
+                Subject = "Accounting",
                 Topic = "Algebra",
                 Chapter = "Quadratic Equations",
 
