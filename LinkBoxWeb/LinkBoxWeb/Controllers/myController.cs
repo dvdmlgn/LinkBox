@@ -122,7 +122,109 @@ namespace LinkBoxWeb.Controllers
 
         public IActionResult Profile()
         {
-            return View(new ProfileModel());
+            List<ProfileModel> mys = new List<ProfileModel>();
+            mys.Add(new ProfileModel()
+            {
+                Subject = "Maths",
+                Topic = "Algebra",
+                Chapter = "Quadratic Equations",
+
+                Description = "mathssss",
+
+                isExercise = false,
+
+                Votes = 70,
+
+                ResourceType = "Exercise",
+
+                Content = "https://startbootstrap.com/template-categories/landing-pages/"
+            });
+
+            mys.Add(new ProfileModel()
+            {
+                Subject = "Accounting",
+                Topic = "Algebra",
+                Chapter = "Quadratic Equations",
+
+                Description = "mathssss",
+
+                isExercise = false,
+
+                Votes = 54,
+
+                ResourceType = "Exercise",
+
+                Content = "https://startbootstrap.com/template-categories/landing-pages/"
+            });
+
+            mys.Add(new ProfileModel()
+            {
+                Subject = "Maths",
+                Topic = "Algebra",
+                Chapter = "Quadratic Equations",
+
+                Description = "mathssss",
+
+                isExercise = false,
+
+                Votes = 32,
+
+                ResourceType = "Exercise",
+
+                Content = "https://startbootstrap.com/template-categories/landing-pages/"
+            });
+
+            mys.Add(new ProfileModel()
+            {
+                Subject = "Maths",
+                Topic = "Algebra",
+                Chapter = "Quadratic Equations",
+
+                Description = "mathssss",
+
+                isExercise = false,
+
+                Votes = 29,
+                ResourceType = "Library",
+
+                Content = "https://startbootstrap.com/template-categories/landing-pages/"
+            });
+
+            mys.Add(new ProfileModel()
+            {
+                Subject = "Maths",
+                Topic = "Algebra",
+                Chapter = "Quadratic Equations",
+
+                Description = "mathssss",
+
+                isExercise = true,
+
+                Votes = 24,
+
+                ResourceType = "Exercise",
+
+                Content = "https://startbootstrap.com/template-categories/landing-pages/"
+            });
+
+            mys.Add(new ProfileModel()
+            {
+                Subject = "Maths",
+                Topic = "Algebra",
+                Chapter = "Quadratic Equations",
+
+                Description = "mathssss",
+
+                isExercise = true,
+
+                Votes = 14,
+
+                ResourceType = "Library",
+
+                Content = "https://startbootstrap.com/template-categories/landing-pages/"
+            });
+
+            return View(mys);
         }
     }
 }
