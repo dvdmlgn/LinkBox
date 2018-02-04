@@ -107,5 +107,10 @@ namespace LinkBoxWeb.Controllers
 
             return View(mys);
         }
+
+        public IActionResult Profile()
+        {
+            return View();
+        }
     }
 }
