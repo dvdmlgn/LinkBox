@@ -1,6 +1,7 @@
-﻿namespace LinkBoxWeb.Models
+
+namespace LinkBoxWeb.Models
 {
-    internal class ProfileModel
+    public class ProfileModel
     {
         internal bool isExercise;
 
