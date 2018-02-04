@@ -12,8 +12,8 @@ using System;
 namespace LinkBoxWeb.Migrations
 {
     [DbContext(typeof(LinkBoxContext))]
-    [Migration("20180204051038_BAD")]
-    partial class BAD
+    [Migration("20180204055806_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -60,7 +60,7 @@ namespace LinkBoxWeb.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("SessionGuid");
+                    b.Property<Guid>("SessionGuid");
 
                     b.Property<int?>("UserId");
 
@@ -143,10 +143,6 @@ namespace LinkBoxWeb.Migrations
                     b.Property<string>("Username");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Username")
-                        .IsUnique()
-                        .HasFilter("[Username] IS NOT NULL");
 
                     b.ToTable("Users");
                 });

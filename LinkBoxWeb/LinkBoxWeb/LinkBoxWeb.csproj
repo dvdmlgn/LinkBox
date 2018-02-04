@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20180204050731_Bugfix.cs" />
+    <Compile Remove="Migrations\20180204050731_Bugfix.Designer.cs" />
+    <Compile Remove="Migrations\20180204053756_Tidyup.cs" />
+    <Compile Remove="Migrations\20180204053756_Tidyup.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="..\..\Subject.txt" Link="SeedData\Subject.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

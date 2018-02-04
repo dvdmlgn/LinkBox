@@ -9,7 +9,7 @@ namespace LinkBoxWeb.DataModel
     {
         public int Id { get; set; }
 
-        public string SessionGuid { get; set; }
+        public Guid SessionGuid { get; set; }
 
         public User User { get; set; }
     }

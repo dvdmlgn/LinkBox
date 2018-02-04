@@ -81,14 +81,14 @@ namespace LinkBoxWeb.Controllers
 
             var session = new Session()
             {
-                User = user,
-                SessionGuid = Guid.NewGuid().ToString() // <- NOOOO!!!! GUID STRING FOR AN INDEX AAAAGGGGHHHHHHHHHHH
+                User = _linkBoxContext.Users.First(_user => _user.Username == user.Username),
+                SessionGuid = Guid.NewGuid() // <- NOOOO!!!! GUID STRING FOR AN INDEX AAAAGGGGHHHHHHHHHHH
             };
 
             _linkBoxContext.Sessions.Add(session);
             _linkBoxContext.SaveChanges();
 
-            Response.Cookies.Append(MagicStrings.SessionGuidKey, session.SessionGuid);
+            Response.Cookies.Append(MagicStrings.SessionGuidKey, session.SessionGuid.ToString());
 
             loginViewModel.Successful = true;
 

@@ -59,7 +59,7 @@ namespace LinkBoxWeb.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("SessionGuid");
+                    b.Property<Guid>("SessionGuid");
 
                     b.Property<int?>("UserId");
 
@@ -142,10 +142,6 @@ namespace LinkBoxWeb.Migrations
                     b.Property<string>("Username");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Username")
-                        .IsUnique()
-                        .HasFilter("[Username] IS NOT NULL");
 
                     b.ToTable("Users");
                 });

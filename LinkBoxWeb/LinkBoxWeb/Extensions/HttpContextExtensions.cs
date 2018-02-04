@@ -1,6 +1,7 @@
 ﻿using LinkBoxWeb.Constants;
 using LinkBoxWeb.DataModel;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
@@ -16,7 +17,7 @@ namespace LinkBoxWeb.Extensions
                 Guid sessionGuid = Guid.Empty;
                 if (Guid.TryParse(sessionGuidString, out sessionGuid))
                 {
-                    var session = context.Sessions.FirstOrDefault(_session => _session.SessionGuid == sessionGuid.ToString());
+                    var session = context.Sessions.Include(s => s.User).FirstOrDefault(_session => _session.SessionGuid == sessionGuid);
                     if (session != null)
                     {
                         return session.User;

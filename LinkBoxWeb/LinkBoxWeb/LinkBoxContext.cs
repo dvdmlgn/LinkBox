@@ -17,14 +17,17 @@ namespace LinkBoxWeb
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            /*
             modelBuilder.Entity<User>()
                  .HasIndex(u => u.Username)
                  .IsUnique();
+            */
         }
 
         public LinkBoxContext(DbContextOptions<LinkBoxContext> options)
             : base(options)
         {
+            /*
             this.Database.Migrate();
 
             var thisAssembly = new FileInfo(Assembly.GetExecutingAssembly().Location);
@@ -50,6 +53,7 @@ namespace LinkBoxWeb
             }
 
             this.SaveChanges();
+            */
         }
 
         public DbSet<Site> Sites { get; set; }
@@ -62,7 +66,6 @@ namespace LinkBoxWeb
         public DbSet<User> Users { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<UserTags> UserTagss { get; set; }
-
         public DbSet<Session> Sessions { get; set; }
     }
 }
