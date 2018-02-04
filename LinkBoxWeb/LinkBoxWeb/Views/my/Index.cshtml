@@ -1,5 +1,9 @@
 ﻿@using System.Collections.Generic;
+@using System;
 
+Random @random = new Random();
+
+@resourceType = "";
 @model List<my>
 
 
@@ -7,10 +11,12 @@
     <div class="row">
     @for(int i = 0; i < @Model.Count; i++)
     {   
+        @resourceType = (@Model[i].isExercise) ? "Exercise" : "Library" ;
+        
     <div class="card bg-light mb-3 col-xs-12 col-sm-4 col-md-3" id="cardView">
           <div class="card-body">
             <h5 class="card-title">@Model[i].Subject</h5>
-            <h6 class="card-subtitle mb-2 text-muted">@Model[i].Topic</h6>
+            <h6 class="card-subtitle mb-2 text-muted">@Model[i].Topic - @resourceType</h6>
             <p class="card-text ">@Model[i].Description</p>
             <a href="@Model[i].Content" id = "newThread" class="card-link cardDescBorder">View</a>
 <!--          </div>-->

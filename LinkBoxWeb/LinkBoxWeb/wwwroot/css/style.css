@@ -1,4 +1,4 @@
-/*@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css";*/;
+/*@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css";*/
 
 .row-bordered:after {
   content: "";
@@ -18,15 +18,19 @@
     /*display: inline;*/
     margin-top: 2em;
     border: 1px solid rgba(0, 0, 0, 0.125);
-
     text-align: center;
+    padding: 0px;
 
-    /*border-radius: 25px;
+    width: 22%;
+   
+
+    margin-right: 10px;
+
+            /*border-radius: 25px;
     background: #73AD21;
     padding: 20px;
     width: 200px;
     height: 150px*/
-
 }
 
 .cardDesc {

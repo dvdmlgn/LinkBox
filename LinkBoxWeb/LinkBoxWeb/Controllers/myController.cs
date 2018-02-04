@@ -48,6 +48,39 @@ namespace LinkBoxWeb.Controllers
                 Content = "https://startbootstrap.com/template-categories/landing-pages/"
             });
 
+            mys.Add(new my()
+            {
+                Subject = "Maths",
+                Topic = "Algebra",
+                Chapter = "Quadratic Equations",
+
+                Description = "mathssss",
+
+                Content = "https://startbootstrap.com/template-categories/landing-pages/"
+            });
+
+            mys.Add(new my()
+            {
+                Subject = "Maths",
+                Topic = "Algebra",
+                Chapter = "Quadratic Equations",
+
+                Description = "mathssss",
+
+                Content = "https://startbootstrap.com/template-categories/landing-pages/"
+            });
+
+            mys.Add(new my()
+            {
+                Subject = "Maths",
+                Topic = "Algebra",
+                Chapter = "Quadratic Equations",
+
+                Description = "mathssss",
+
+                Content = "https://startbootstrap.com/template-categories/landing-pages/"
+            });
+
 
             return View(mys);
         }
