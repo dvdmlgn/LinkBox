@@ -11,5 +11,6 @@ namespace LinkBoxWeb.DataModel
         public string Description { get; set; }
         public Topic Topic { get; set; }
         public List<UserTags> Tags { get; set; }
+        public User User { get; set; }
     }
 }

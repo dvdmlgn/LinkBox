@@ -8,6 +8,7 @@ using LinkBoxWeb.Extensions;
 using LinkBoxWeb.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using LinkBoxWeb.DataModel;
 
 namespace LinkBoxWeb.Controllers
 {
@@ -68,12 +69,36 @@ namespace LinkBoxWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(CreateContentViewModel createContentViewModel)
         {
-            if (this.HttpContext.GetLinkBoxUser(_linkBoxContext) == null)
+            User user = null;
+            if ((user = this.HttpContext.GetLinkBoxUser(_linkBoxContext)) == null)
             {
                 return this.RedirectToLinkBoxLogin();
             }
 
-            return View();
+            if(!string.IsNullOrWhiteSpace(createContentViewModel.LinkHref))
+            {
+                _linkBoxContext.Links.Add(new Link()
+                {
+                    Description = createContentViewModel.Description,
+                    Href = createContentViewModel.LinkHref,
+                    Topic = _linkBoxContext.Topics.First(topic => topic.Id == createContentViewModel.TopicId),
+                    User = user
+                });
+                _linkBoxContext.SaveChanges();
+            }
+            else
+            {
+                _linkBoxContext.Exercises.Add(new Exercise()
+                {
+                    Description = createContentViewModel.Description,
+                    Content = createContentViewModel.ExerciseText,
+                    Topic = _linkBoxContext.Topics.First(topic => topic.Id == createContentViewModel.TopicId),
+                    User = user
+                });
+                _linkBoxContext.SaveChanges();
+            }
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

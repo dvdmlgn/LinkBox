@@ -9,7 +9,7 @@ namespace LinkBoxWeb.DataModel
     {
         public int Id { get; set; }
 
-        public int Rank { get; set; }
+        public int Rank { get; set; } 
 
         public string Username { get; internal set; }
         public string Password { get; internal set; }

@@ -6,13 +6,15 @@
     <title>@ViewData["Title"] - LearnBox</title>
 
     <environment include="Development">
+         <script src="~/lib/jquery/dist/jquery.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
             <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-                    <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+                    
         <script src="~/js/site.js" asp-append-version="true"></script>
             <script src ="~/js/script.js" asp-append-version="true"></script>
   
@@ -24,9 +26,86 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
     </environment>
+    <style type="text/css">
+        .form-group {
+            width: 450px;
+            font-size: 16px;
+            background: #495C70;
+            padding: 30px 30px 15px 30px;
+            border: 5px solid #53687E;
+        }
+
+            .form-group input[type=submit],
+            .form-group input[type=button],
+            .form-group input[type=text],
+            .form-group input[type=email],
+            .form-group textarea,
+            .form-group label {
+                font-family: Georgia, "Times New Roman", Times, serif;
+                font-size: 16px;
+                color: #fff;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+                .form-group label > span {
+                    display: inline-block;
+                    float: left;
+                    width: 150px;
+                }
+
+            .form-group input[type=text],
+            .form-group input[type=email] {
+                background: transparent;
+                border: none;
+                border-bottom: 1px dashed #83A4C5;
+                width: 275px;
+                outline: none;
+                padding: 0px 0px 0px 0px;
+                font-style: italic;
+            }
+
+            .form-group textarea {
+                font-style: italic;
+                padding: 0px 0px 0px 0px;
+                background: transparent;
+                outline: none;
+                border: none;
+                border-bottom: 1px dashed #83A4C5;
+                width: 275px;
+                overflow: hidden;
+                resize: none;
+                height: 20px;
+            }
+
+                .form-group textarea:focus,
+                .form-group input[type=text]:focus,
+                .form-group input[type=email]:focus,
+                .form-group input[type=email] :focus {
+                    border-bottom: 1px dashed #D9FFA9;
+                }
+
+            .form-group input[type=submit],
+            .form-group input[type=button] {
+                background: #576E86;
+                border: none;
+                padding: 8px 10px 8px 10px;
+                border-radius: 5px;
+                color: #A8BACE;
+            }
+
+                .form-group input[type=submit]:hover,
+                .form-group input[type=button]:hover {
+                    background: #394D61;
+                }
+    </style>
 </head>
-<body>
-    
+<body >
+
+       <div iid="body"></div>
         <div class="container">
 
            <!--<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -45,36 +124,57 @@
             
     </nav>-->
 
-            <nav class="nav navbar-default navbar-fixed-top">
-                <div class="container">
-                    <div class="navbar-header">
-                    <button type='button' class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
 
-                        <img class="navbar-logo" src="#">
+
+            
+
+            <!--<nav class="navbar-right">
+                <div class="container" id="nav">
+                    
+                    <div class="navbar-header">
+                        <button type='button' class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <img class="navbar-logo" src="~/logo.png">
                     </div>
 
-                    <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Submit<i> class=""</i></a></li> 
-                            <li><button></button></li>
-                            <li><button></button></li>
-                    </ul>
+                    <div id="navbar" class="navbar-right">
+                        <ul class="navbar-righ">
+                            <li><a href="#">Submit <i class="fa fa-upload"></i></a></li> 
+                        </ul>
 
-                        <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Signup <i class="fa fa-user-plus"></i></a></li>
-                        <li><a href="#">Login <i class="fa fa-user"></i></a></li>
+                        <ul class="navbar-right">
+                            <li><a href="#">Signup <i class="fa fa-user-plus"></i></a></li>
+                            <li><a href="#">Login <i class="fa fa-user"></i></a></li>
                         </ul>
 
 
                     </div>
                 </div> 
-            </nav>
+            </nav>-->
 
+
+            <div class="navbar-header">
+                        <img class="navbar-logo" src="~/logo.png">
+                    </div>
+
+                    <div id="navbar" class="">
+
+                        <ul class="navbar-right">
+                            <li><a href="/CreateContent"><strong>Submit </strong><i class="fa fa-upload"></i></a></li>
+                            <li><a href="/account/login">Signup <i class="fa fa-user-plus"></i></a></li>
+                            <li><a href="/account/login">Login <i class="fa fa-user"></i></a></li>
+                        </ul>
+
+
+                    </div>
+
+
+            <div style="clear:both"></div>
         
     <div class="container body-content">
         @RenderBody()

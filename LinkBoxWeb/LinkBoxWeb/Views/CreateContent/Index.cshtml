@@ -36,10 +36,12 @@
         <form asp-action="Index">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                @Html.DropDownListFor(m => m.SubjectId, Model.Subjects, new { id = "subjectSelectList" })
+                <label asp-for="SubjectId" class="control-label">Subject</label>
+                @Html.DropDownListFor(m => m.SubjectId, Model.Subjects, new { id = "subjectSelectList", @class = "form-control" })
             </div>
-            <div>
-                @Html.DropDownListFor(m => m.TopicId, Model.Topics)
+            <div class="form-group">
+                <label asp-for="TopicId" class="control-label">Topic</label>
+                @Html.DropDownListFor(m => m.TopicId, Model.Topics, new { @class = "form-control" })
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>

@@ -31,7 +31,11 @@ namespace LinkBoxWeb.Migrations
                     b.Property<string>("Discriminator")
                         .IsRequired();
 
+                    b.Property<int?>("UserId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Contents");
 
@@ -185,6 +189,13 @@ namespace LinkBoxWeb.Migrations
                     b.ToTable("Link");
 
                     b.HasDiscriminator().HasValue("Link");
+                });
+
+            modelBuilder.Entity("LinkBoxWeb.DataModel.Content", b =>
+                {
+                    b.HasOne("LinkBoxWeb.DataModel.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("LinkBoxWeb.DataModel.Session", b =>
