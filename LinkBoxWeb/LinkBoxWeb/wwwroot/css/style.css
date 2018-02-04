@@ -37,15 +37,27 @@
   padding: 3px;
 }
 
-.input-group {
+.form-control {
+    width: 60%;
+
     /*display: inline-block;
     vertical-align: middle;
 
-    width: 60%;*/6
-
+    width: 60%;*/
     /*.input-group-addon, .input-group-btn, 
     .form-control {
         width: auto !important;                                                    
     }*/
+}
+
+form {
+    margin: 10px;
+
+    margin-top: 5em;
+
+}
+
+#whateveryouwant {
+    width: 60%;
 }
 
