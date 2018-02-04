@@ -1,6 +1,7 @@
 ﻿using LinkBoxWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,6 +10,8 @@ namespace LinkBoxWeb.Controllers
     public class HomeController : Controller
     {
         private LinkBoxContext _linkBoxContext;
+
+        private Random _random = new Random(Guid.NewGuid().GetHashCode());
 
         public HomeController(LinkBoxContext linkBoxContext)
         {
@@ -29,7 +32,7 @@ namespace LinkBoxWeb.Controllers
                 Topic = ex.Topic.Name,
                 Description = ex.Description,
                 isExercise = true,
-                Votes = 70,
+                Votes = _random.Next(0, 349),
                 ResourceType = ex.IsExcercise ? "Excercise" : "Library",
                 Content = ex.Href,
                 Creator = ex.User.Username
