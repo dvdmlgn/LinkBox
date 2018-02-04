@@ -14,6 +14,19 @@
 
 }
 
+.navbar-right {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+
+    .navbar-right li {
+        display: inline-block;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none
+    }
+
 .row-bordered:after {
   content: "";
   display: block;
