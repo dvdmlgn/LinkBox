@@ -1,1 +1,1 @@
-﻿
+﻿Server=tcp:linkbox.database.windows.net,1433;Initial Catalog=LinkBox;Persist Security Info=False;User ID=divinci;Password=pa55worD!pa55worD!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
