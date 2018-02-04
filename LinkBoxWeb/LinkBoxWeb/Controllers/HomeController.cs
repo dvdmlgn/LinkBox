@@ -22,6 +22,7 @@ namespace LinkBoxWeb.Controllers
                 .Contents
                 .Include(cont => cont.Topic)
                 .Include(cont => cont.Topic.Subject)
+                .Include(cont => cont.User)
                 .ToList().Select(ex => 
             new my() {
                 Subject = ex.Topic.Subject.Name,
@@ -30,7 +31,8 @@ namespace LinkBoxWeb.Controllers
                 isExercise = true,
                 Votes = 70,
                 ResourceType = ex.IsExcercise ? "Excercise" : "Library",
-                Content = ex.Href
+                Content = ex.Href,
+                Creator = ex.User.Username
             }).ToList();
             
             return View(mys);
