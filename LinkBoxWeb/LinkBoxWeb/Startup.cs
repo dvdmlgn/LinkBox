@@ -23,6 +23,13 @@ namespace LinkBoxWeb
 
             var connectionString = File.ReadAllText("SQLConnectionString.txt");
             services.AddDbContext<LinkBoxContext>(options => options.UseSqlServer(connectionString));
+
+            services.AddAuthentication()
+            .AddCookie(options =>
+            {
+                options.LoginPath = "/Account/Login/";
+                options.AccessDeniedPath = "/Account/Login/";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +53,8 @@ namespace LinkBoxWeb
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.UseCookiePolicy(new CookiePolicyOptions());
         }
     }
 }

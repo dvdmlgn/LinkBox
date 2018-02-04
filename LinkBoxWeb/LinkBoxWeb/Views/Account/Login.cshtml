@@ -1,0 +1,52 @@
+﻿@model LinkBoxWeb.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login</h2>
+
+<h4>LoginViewModel</h4>
+<hr />
+@if (Model.IsIncorrectPasswordOrUsernameTaken)
+{
+    <div class="alert alert-warning" role="alert">
+        <strong>Computer Says No&#33;</strong> Either you have entered an invalid password, or the username is not yours&#33;
+    </div>
+}
+@if (Model.IsInvalid)
+{
+    <div class="alert alert-warning" role="alert">
+        <strong>No blanks&#33;&#33;</strong> You can not have a blank username or password&#33;&#33;
+    </div>
+}
+@if (Model.Successful)
+{
+    <div class="alert alert-success" role="alert">
+        <strong>Welcome&#33;, you are now logged on.</strong>
+    </div>
+}
+else
+{
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+            <input type="hidden" asp-for="RouteValueDictionary" class="form-control" />
+        </form>
+    </div>
+</div>
+}

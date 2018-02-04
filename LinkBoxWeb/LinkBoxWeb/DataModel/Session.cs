@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 
 namespace LinkBoxWeb.DataModel
 {
-    public class User
+    public class Session
     {
         public int Id { get; set; }
 
-        public int Rank { get; set; }
+        public Guid SessionGuid { get; } = Guid.NewGuid();
 
-        public string Username { get; internal set; }
-        public string Password { get; internal set; }
+        public User User { get; set; }
     }
 }

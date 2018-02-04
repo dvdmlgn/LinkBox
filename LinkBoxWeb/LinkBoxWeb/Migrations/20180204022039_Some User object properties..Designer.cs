@@ -12,9 +12,10 @@ using System;
 namespace LinkBoxWeb.Migrations
 {
     [DbContext(typeof(LinkBoxContext))]
-    partial class LinkBoxContextModelSnapshot : ModelSnapshot
+    [Migration("20180204022039_Some User object properties.")]
+    partial class SomeUserobjectproperties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,20 +53,6 @@ namespace LinkBoxWeb.Migrations
                     b.ToTable("Contents");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Content");
-                });
-
-            modelBuilder.Entity("LinkBoxWeb.DataModel.Session", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("UserId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Sessions");
                 });
 
             modelBuilder.Entity("LinkBoxWeb.DataModel.Site", b =>
@@ -141,10 +128,6 @@ namespace LinkBoxWeb.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Username")
-                        .IsUnique()
-                        .HasFilter("[Username] IS NOT NULL");
-
                     b.ToTable("Users");
                 });
 
@@ -206,13 +189,6 @@ namespace LinkBoxWeb.Migrations
                     b.HasOne("LinkBoxWeb.DataModel.Topic", "Topic")
                         .WithMany("Chapters")
                         .HasForeignKey("TopicId");
-                });
-
-            modelBuilder.Entity("LinkBoxWeb.DataModel.Session", b =>
-                {
-                    b.HasOne("LinkBoxWeb.DataModel.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("LinkBoxWeb.DataModel.Subject", b =>
