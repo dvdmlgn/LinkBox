@@ -9,14 +9,14 @@
 
 .cardDescBorder {
   content: "";
-  display: block;
+  /*display: block;*/
   border-top: 1px solid #ccc;
   margin: 0px;
 }
 
 #cardView {
-    display: inline;
-    margin: 5px;
+    /*display: inline;*/
+    margin-top: 2em;
     border: 1px solid rgba(0, 0, 0, 0.125);
 
     text-align: center;
