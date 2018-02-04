@@ -12,9 +12,10 @@ using System;
 namespace LinkBoxWeb.Migrations
 {
     [DbContext(typeof(LinkBoxContext))]
-    partial class LinkBoxContextModelSnapshot : ModelSnapshot
+    [Migration("20180204011155_Some more data models.")]
+    partial class Somemoredatamodels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
