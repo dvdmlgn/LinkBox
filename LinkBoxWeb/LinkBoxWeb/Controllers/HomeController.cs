@@ -1,122 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using LinkBoxWeb.Models;
 using Microsoft.AspNetCore.Mvc;
-using LinkBoxWeb.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LinkBoxWeb.Controllers
 {
     public class HomeController : Controller
     {
+        private LinkBoxContext _linkBoxContext;
+
+        public HomeController(LinkBoxContext linkBoxContext)
+        {
+            _linkBoxContext = linkBoxContext;
+        }
+
         // GET: /<controller>/
         public IActionResult Index()
         {
-
-            List<my> mys = new List<my>();
-            mys.Add(new my()
-            {
-                Subject = "Maths",
-                Topic = "Algebra",
-                Chapter = "Quadratic Equations",
-
-                Description = "mathssss",
-
-                isExercise = false,
-
+            List<my> mys = _linkBoxContext
+                .Contents
+                .Include(cont => cont.Topic)
+                .Include(cont => cont.Topic.Subject)
+                .ToList().Select(ex => 
+            new my() {
+                Subject = ex.Topic.Subject.Name,
+                Topic = ex.Topic.Name,
+                Description = ex.Description,
+                isExercise = true,
                 Votes = 70,
-
-                ResourceType = "Exercise",
-
-                Content = "https://startbootstrap.com/template-categories/landing-pages/"
-            });
-
-            mys.Add(new my()
-            {
-                Subject = "Accounting",
-                Topic = "Algebra",
-                Chapter = "Quadratic Equations",
-
-                Description = "mathssss",
-
-                isExercise = false,
-
-                Votes = 54,
-
-                ResourceType = "Exercise",
-
-                Content = "https://startbootstrap.com/template-categories/landing-pages/"
-            });
-
-            mys.Add(new my()
-            {
-                Subject = "Maths",
-                Topic = "Algebra",
-                Chapter = "Quadratic Equations",
-
-                Description = "mathssss",
-
-                isExercise = false,
-
-                Votes = 32,
-
-                ResourceType = "Exercise",
-
-                Content = "https://startbootstrap.com/template-categories/landing-pages/"
-            });
-
-            mys.Add(new my()
-            {
-                Subject = "Maths",
-                Topic = "Algebra",
-                Chapter = "Quadratic Equations",
-
-                Description = "mathssss",
-
-                isExercise = false,
-
-                Votes = 29,
-                ResourceType = "Library",
-
-                Content = "https://startbootstrap.com/template-categories/landing-pages/"
-            });
-
-            mys.Add(new my()
-            {
-                Subject = "Maths",
-                Topic = "Algebra",
-                Chapter = "Quadratic Equations",
-
-                Description = "mathssss",
-
-                isExercise = true,
-
-                Votes = 24,
-
-                ResourceType = "Exercise",
-
-                Content = "https://startbootstrap.com/template-categories/landing-pages/"
-            });
-
-            mys.Add(new my()
-            {
-                Subject = "Maths",
-                Topic = "Algebra",
-                Chapter = "Quadratic Equations",
-
-                Description = "mathssss",
-
-                isExercise = true,
-
-                Votes = 14,
-
-                ResourceType = "Library",
-
-                Content = "https://startbootstrap.com/template-categories/landing-pages/"
-            });
-
-
+                ResourceType = ex.IsExcercise ? "Excercise" : "Library",
+                Content = ex.Href
+            }).ToList();
+            
             return View(mys);
         }
 
@@ -223,8 +139,6 @@ namespace LinkBoxWeb.Controllers
 
                 Content = "https://startbootstrap.com/template-categories/landing-pages/"
             });
-
-
 
             return View(mys);
         }

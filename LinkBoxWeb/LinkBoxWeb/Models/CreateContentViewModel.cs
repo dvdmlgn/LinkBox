@@ -14,7 +14,7 @@ namespace LinkBoxWeb.Models
         public string Description { get; set; }
         public string Tags { get; set; }
         public string LinkHref { get; set; }
-        public string ExerciseText { get; set; }
+        public bool IsExercise { get; set; }
         public List<SelectListItem> Subjects { get; set; }
         public List<SelectListItem> Topics { get; set; }
     }

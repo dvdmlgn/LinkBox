@@ -75,28 +75,15 @@ namespace LinkBoxWeb.Controllers
                 return this.RedirectToLinkBoxLogin();
             }
 
-            if(!string.IsNullOrWhiteSpace(createContentViewModel.LinkHref))
+            _linkBoxContext.Contents.Add(new Content()
             {
-                _linkBoxContext.Links.Add(new Link()
-                {
-                    Description = createContentViewModel.Description,
-                    Href = createContentViewModel.LinkHref,
-                    Topic = _linkBoxContext.Topics.First(topic => topic.Id == createContentViewModel.TopicId),
-                    User = user
-                });
-                _linkBoxContext.SaveChanges();
-            }
-            else
-            {
-                _linkBoxContext.Exercises.Add(new Exercise()
-                {
-                    Description = createContentViewModel.Description,
-                    Content = createContentViewModel.ExerciseText,
-                    Topic = _linkBoxContext.Topics.First(topic => topic.Id == createContentViewModel.TopicId),
-                    User = user
-                });
-                _linkBoxContext.SaveChanges();
-            }
+                Description = createContentViewModel.Description,
+                Href = createContentViewModel.LinkHref,
+                Topic = _linkBoxContext.Topics.First(topic => topic.Id == createContentViewModel.TopicId),
+                User = user,
+                IsExcercise = createContentViewModel.IsExercise
+            });
+            _linkBoxContext.SaveChanges();
 
             return RedirectToAction("Index", "Home");
         }
