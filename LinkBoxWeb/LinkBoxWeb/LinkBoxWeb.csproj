@@ -17,4 +17,7 @@
     <ProjectReference Include="..\LinkBox.Data\LinkBox.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\my\" />
+  </ItemGroup>
 </Project>

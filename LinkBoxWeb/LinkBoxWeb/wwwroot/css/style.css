@@ -1,0 +1,32 @@
+/*@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css";*/;
+
+.row-bordered:after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #ccc;
+  margin: 0 15px;
+}
+
+.cardDescBorder {
+  content: "";
+  display: block;
+  border-top: 1px solid #ccc;
+  margin: 0px;
+}
+
+.cardView {
+    display: inline;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.cardDesc {
+  padding: 3px;
+}
+.hidden {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
