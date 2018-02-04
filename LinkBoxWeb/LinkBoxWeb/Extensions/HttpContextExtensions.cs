@@ -16,7 +16,7 @@ namespace LinkBoxWeb.Extensions
                 Guid sessionGuid = Guid.Empty;
                 if (Guid.TryParse(sessionGuidString, out sessionGuid))
                 {
-                    var session = context.Sessions.FirstOrDefault(_session => _session.SessionGuid == sessionGuid);
+                    var session = context.Sessions.FirstOrDefault(_session => _session.SessionGuid == sessionGuid.ToString());
                     if (session != null)
                     {
                         return session.User;

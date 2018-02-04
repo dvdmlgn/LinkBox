@@ -13,6 +13,7 @@ using LinkBoxWeb.Constants;
 using Microsoft.AspNetCore.Routing;
 using System.Web;
 using Newtonsoft.Json;
+using LinkBoxWeb.Extensions;
 
 namespace LinkBoxWeb.Controllers
 {
@@ -80,13 +81,14 @@ namespace LinkBoxWeb.Controllers
 
             var session = new Session()
             {
-                User = user
+                User = user,
+                SessionGuid = Guid.NewGuid().ToString() // <- NOOOO!!!! GUID STRING FOR AN INDEX AAAAGGGGHHHHHHHHHHH
             };
 
             _linkBoxContext.Sessions.Add(session);
             _linkBoxContext.SaveChanges();
 
-            Response.Cookies.Append(MagicStrings.SessionGuidKey, session.SessionGuid.ToString());
+            Response.Cookies.Append(MagicStrings.SessionGuidKey, session.SessionGuid);
 
             loginViewModel.Successful = true;
 
@@ -102,6 +104,13 @@ namespace LinkBoxWeb.Controllers
 
                 return View(loginViewModel);
             }
+        }
+
+        public ActionResult Logout()
+        {
+            Response.Cookies.Delete(MagicStrings.SessionGuidKey);
+
+            return View();
         }
     }
 }

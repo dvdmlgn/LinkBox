@@ -12,9 +12,10 @@ using System;
 namespace LinkBoxWeb.Migrations
 {
     [DbContext(typeof(LinkBoxContext))]
-    partial class LinkBoxContextModelSnapshot : ModelSnapshot
+    [Migration("20180204050614_Auth nearly done")]
+    partial class Authnearlydone
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,8 +59,6 @@ namespace LinkBoxWeb.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("SessionGuid");
 
                     b.Property<int?>("UserId");
 

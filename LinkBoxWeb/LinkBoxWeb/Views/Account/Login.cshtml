@@ -4,9 +4,14 @@
     ViewData["Title"] = "Login";
 }
 
-<h2>Login</h2>
-
-<h4>LoginViewModel</h4>
+@if (!string.IsNullOrWhiteSpace(Model.RouteValueDictionary))
+{
+    <h2>Please login to continue.</h2>
+}
+else
+{
+    <h2>Login</h2>
+}
 <hr />
 @if (Model.IsIncorrectPasswordOrUsernameTaken)
 {
