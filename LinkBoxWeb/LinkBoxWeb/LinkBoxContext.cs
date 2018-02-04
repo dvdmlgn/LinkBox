@@ -26,6 +26,7 @@ namespace LinkBoxWeb
         public LinkBoxContext(DbContextOptions<LinkBoxContext> options)
             : base(options)
         {
+            /*
             this.Database.Migrate();
 
             var thisAssembly = new FileInfo(Assembly.GetExecutingAssembly().Location);
@@ -65,6 +66,7 @@ namespace LinkBoxWeb
             }
 
             this.SaveChanges();
+            */
         }
 
         public DbSet<Site> Sites { get; set; }
