@@ -6,6 +6,8 @@ public class my {
     public string Chapter { get; set; }
     public bool isExercise { get; set; }
 
+    public string ResourceType { get; set; }
+
     public string Description { get; set; }
 
     public string Content { get; set; }

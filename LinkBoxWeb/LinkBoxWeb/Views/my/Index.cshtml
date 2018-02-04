@@ -1,26 +1,70 @@
 ﻿@using System.Collections.Generic;
 @using System;
 
-Random @random = new Random();
+@{ 
 
-@resourceType = "";
+    Random random = new Random();
+
+    int number = 0;
+
+    int test = 0;
+
+   string resourceType = "";
+}
 @model List<my>
 
 <div class="container"> 
+        <center>
+<!--    <div class="row">-->
+        <form class="form-inline">
+<!--        <div class="input-group mb-2">-->
+            <input type="text" class="form-control" placeholder="search" aria-label="Recipient's username" aria-describedby="basic-addon2" id="whateveryouwant">
+<!--        <div class="input-group-append">-->
+            <button class="btn btn-outline-secondary" type="button" id="search">Search</button>
+                
+<!--        </div>-->
+              
+        </form>
+        </center>
+
+         
+<!--    </div>-->
+</div>
+
+    
+    <div class="row">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-primary active" id="all">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> All
+            </label>
+            
+            <label class="btn btn-primary" id="library">
+            <input type="radio" name="options" id="option2" autocomplete="off"> Library
+            </label>
+
+            <label class="btn btn-primary" id="exercise">
+            <input type="radio" name="options" id="option3" autocomplete="off"> Exercise
+            </label>
+    </div>
+
+
+
+    </div>
+
+
     <div class="row">
     @for(int i = 0; i < @Model.Count; i++)
     {   
-        @resourceType = (@Model[i].isExercise) ? "Exercise" : "Library" ;
         
-    <div class="card bg-light mb-3 col-xs-12 col-sm-4 col-md-3" id="cardView">
+    <div class="card bg-light mb-3 col-xs-12 col-sm-4 col-md-3 @Model[i].Subject.ToUpper() @Model[i].Topic.ToUpper() @Model[i].ResourceType.ToUpper()" id="cardView">
           <div class="card-body">
             <h5 class="card-title">@Model[i].Subject</h5>
-            <h6 class="card-subtitle mb-2 text-muted">@Model[i].Topic - @resourceType</h6>
+            <h6 class="card-subtitle mb-2 text-muted">@Model[i].Topic - @Model[i].ResourceType</h6>
             <p class="card-text ">@Model[i].Description</p>
             <a href="@Model[i].Content" id = "newThread" class="card-link cardDescBorder">View</a>
-<!--          </div>-->
-            </div>
+          </div>
     </div>
+<!--    </div>-->
     }
     </div>
 </div>

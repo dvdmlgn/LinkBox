@@ -23,38 +23,24 @@ namespace LinkBoxWeb.Controllers
 
                 Description = "mathssss",
 
-                Content = "https://startbootstrap.com/template-categories/landing-pages/"
-            });
+                isExercise = false,
 
-            mys.Add(new my()
-            {
-                Subject = "Maths",
-                Topic = "Algebra",
-                Chapter = "Quadratic Equations",
-
-                Description = "mathssss",
+                ResourceType = "Exercise",
 
                 Content = "https://startbootstrap.com/template-categories/landing-pages/"
             });
 
             mys.Add(new my()
             {
-                Subject = "Maths",
+                Subject = "Accounting",
                 Topic = "Algebra",
                 Chapter = "Quadratic Equations",
 
                 Description = "mathssss",
 
-                Content = "https://startbootstrap.com/template-categories/landing-pages/"
-            });
+                isExercise = false,
 
-            mys.Add(new my()
-            {
-                Subject = "Maths",
-                Topic = "Algebra",
-                Chapter = "Quadratic Equations",
-
-                Description = "mathssss",
+                ResourceType = "Exercise",
 
                 Content = "https://startbootstrap.com/template-categories/landing-pages/"
             });
@@ -67,6 +53,10 @@ namespace LinkBoxWeb.Controllers
 
                 Description = "mathssss",
 
+                isExercise = false,
+
+                ResourceType = "Exercise",
+
                 Content = "https://startbootstrap.com/template-categories/landing-pages/"
             });
 
@@ -77,6 +67,39 @@ namespace LinkBoxWeb.Controllers
                 Chapter = "Quadratic Equations",
 
                 Description = "mathssss",
+
+                isExercise = false,
+                ResourceType = "Library",
+
+                Content = "https://startbootstrap.com/template-categories/landing-pages/"
+            });
+
+            mys.Add(new my()
+            {
+                Subject = "Maths",
+                Topic = "Algebra",
+                Chapter = "Quadratic Equations",
+
+                Description = "mathssss",
+
+                isExercise = true,
+
+                ResourceType = "Exercise",
+
+                Content = "https://startbootstrap.com/template-categories/landing-pages/"
+            });
+
+            mys.Add(new my()
+            {
+                Subject = "Maths",
+                Topic = "Algebra",
+                Chapter = "Quadratic Equations",
+
+                Description = "mathssss",
+
+                isExercise = true,
+
+                ResourceType = "Library",
 
                 Content = "https://startbootstrap.com/template-categories/landing-pages/"
             });
