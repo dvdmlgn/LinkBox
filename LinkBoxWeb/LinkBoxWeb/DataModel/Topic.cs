@@ -2,14 +2,14 @@
 
 namespace LinkBoxWeb.DataModel
 {
-    public class Subject
+    public class Topic
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public Site Site { get; set; }
+        public Subject Subject { get; set; }
 
-        public List<Topic> Topics { get; set; }
+        public List<Chapter> Chapters { get; set; }
     }
 }

@@ -13,6 +13,9 @@ namespace LinkBoxWeb
             : base(options)
         { }
 
+        public DbSet<Site> Sites { get; set; }
         public DbSet<Subject> Subjects { get; set; }
+        public DbSet<Topic> Topics { get; set; }
+        public DbSet<Chapter> Chapters { get; set; }
     }
 }
