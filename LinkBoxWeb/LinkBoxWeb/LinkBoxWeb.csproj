@@ -17,6 +17,5 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\my\Profile.cshtml.cs" />
-    <Compile Remove="Models\ProfileModel.cs" />
   </ItemGroup>
 </Project>
