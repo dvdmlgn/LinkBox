@@ -22,10 +22,21 @@
 
         }
 
+     //     if(window.location.href.indexOf('#myModal') != -1) {
+   // $('#myModal').modal('show');
+ // }
 
+
+ $('#myModal').on('show.bs.modal', function (e) {
+    var loadurl = $(e.relatedTarget).data('load-url');
+    $(this).find('.modal-body').load(loadurl);
+});
 
 
     });
+
+
+
 
     $().button('toggle');
     $('#all').click(function()
