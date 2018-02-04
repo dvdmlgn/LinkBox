@@ -5,27 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - LearnBox</title>
 
-    <environment include="Development">
-         <script src="~/lib/jquery/dist/jquery.js"></script>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <!--<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>-->
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
-            <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="~/css/style.css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-                    
-        <script src="~/js/site.js" asp-append-version="true"></script>
-            <script src ="~/js/script.js" asp-append-version="true"></script>
-  
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
+        <script src="~/js/site.js"></script>
+        <script src="~/js/script.js"></script>
+    
+    
+        <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-        <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-    </environment>
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />-->
+        <!--<link rel="stylesheet" href="~/css/site.min.css" />-->
+        <!--<link rel="stylesheet" href="~/css/style.css" />-->
+    
     <style type="text/css">
         .form-group {
             width: 450px;
@@ -103,109 +101,96 @@
                 }
     </style>
 </head>
-<body >
+<body>
 
-       <div iid="body"></div>
-        <div class="container">
+    <div iid="body"></div>
+    <div class="container">
 
-           <!--<nav class="navbar navbar-inverse navbar-fixed-top">
+        <!--<nav class="navbar navbar-inverse navbar-fixed-top">
 
-            <nav class="navbar navbar-light bg-light justify-content-between row-bordered">
-        <a class="navbar-brand">LinkBox</a>
+                <nav class="navbar navbar-light bg-light justify-content-between row-bordered">
+            <a class="navbar-brand">LinkBox</a>
 
-        <form class="form" >
-          <button class="btn btn-primary pull-center" type="submit">Submit</button>
-                        
-          <button class="btn btn-primary pull-right" type="submit">Sign up</button>
-          <button class="btn btn-outline-success my-2 my-sm-0  btn-primary pull-right">Login</button>
-        </form>
+            <form class="form">
+              <button class="btn btn-primary pull-center" type="submit">Submit</button>
 
-      </nav>
-            
-    </nav>-->
+              <button class="btn btn-primary pull-right" type="submit">Sign up</button>
+              <button class="btn btn-outline-success my-2 my-sm-0  btn-primary pull-right">Login</button>
+            </form>
+          </nav>
+        </nav>-->
+        <!--<nav class="navbar-right">
+            <div class="container" id="nav">
 
+                <div class="navbar-header">
+                    <button type='button' class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
+                    <img class="navbar-logo" src="~/logo.png">
+                </div>
 
-            
+                <div id="navbar" class="navbar-right">
+                    <ul class="navbar-righ">
+                        <li><a href="#">Submit <i class="fa fa-upload"></i></a></li>
+                    </ul>
 
-            <!--<nav class="navbar-right">
-                <div class="container" id="nav">
-                    
-                    <div class="navbar-header">
-                        <button type='button' class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
+                    <ul class="navbar-right">
+                        <li><a href="#">Signup <i class="fa fa-user-plus"></i></a></li>
+                        <li><a href="#">Login <i class="fa fa-user"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>-->
 
-                        <img class="navbar-logo" src="~/logo.png">
-                    </div>
+        <div class="navbar-header">
+            <img class="navbar-logo" src="~/logo.png">
+        </div>
 
-                    <div id="navbar" class="navbar-right">
-                        <ul class="navbar-righ">
-                            <li><a href="#">Submit <i class="fa fa-upload"></i></a></li> 
-                        </ul>
+        <div id="navbar" class="">
 
-                        <ul class="navbar-right">
-                            <li><a href="#">Signup <i class="fa fa-user-plus"></i></a></li>
-                            <li><a href="#">Login <i class="fa fa-user"></i></a></li>
-                        </ul>
+            <ul class="navbar-right">
+                <li><a href="/CreateContent"><strong>Submit </strong><i class="fa fa-upload"></i></a></li>
+                <li><a href="/account/login">Signup <i class="fa fa-user-plus"></i></a></li>
+                <li><a href="/account/login">Login <i class="fa fa-user"></i></a></li>
+            </ul>
+        </div>
 
+        <div style="clear:both"></div>
 
-                    </div>
-                </div> 
-            </nav>-->
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; 2018 - LinkBoxWeb</p>
+            </footer>
+        </div>
 
+        <environment include="Development">
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+            <script src="~/js/script.js"></script>
+        </environment>
+        <environment exclude="Development">
+            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+            </script>
+            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+            </script>
+            <script src="~/js/site.min.js" asp-append-version="true"></script>
+        </environment>
 
-            <div class="navbar-header">
-                        <img class="navbar-logo" src="~/logo.png">
-                    </div>
-
-                    <div id="navbar" class="">
-
-                        <ul class="navbar-right">
-                            <li><a href="/CreateContent"><strong>Submit </strong><i class="fa fa-upload"></i></a></li>
-                            <li><a href="/account/login">Signup <i class="fa fa-user-plus"></i></a></li>
-                            <li><a href="/account/login">Login <i class="fa fa-user"></i></a></li>
-                        </ul>
-
-
-                    </div>
-
-
-            <div style="clear:both"></div>
-        
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - LinkBoxWeb</p>
-        </footer>
-    </div>
-
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-            <script src ="~/js/script.js"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-
-    @RenderSection("Scripts", required: false)
+        @RenderSection("Scripts", required: false)
 </body>
 </html>

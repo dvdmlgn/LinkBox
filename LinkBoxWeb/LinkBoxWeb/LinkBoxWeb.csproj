@@ -18,4 +18,9 @@
   <ItemGroup>
     <Compile Remove="Views\my\Profile.cshtml.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="SQLConnectionString.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
