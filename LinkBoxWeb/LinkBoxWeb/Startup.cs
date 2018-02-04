@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.IO;
 
 namespace LinkBoxWeb
 {
@@ -20,8 +21,8 @@ namespace LinkBoxWeb
         {
             services.AddMvc();
 
-            var connection = @"Server=linkbox.database.windows.net;Database=LinkBox;Trusted_Connection=True;ConnectRetryCount=0";
-            services.AddDbContext<LinkBoxContext>(options => options.UseSqlServer(connection));
+            var connectionString = File.ReadAllText("SQLConnectionString.txt");
+            services.AddDbContext<LinkBoxContext>(options => options.UseSqlServer(connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
