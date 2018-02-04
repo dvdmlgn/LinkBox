@@ -65,8 +65,8 @@
             <h5 class="card-title">@Model[i].Subject</h5>
             <h6 class="card-subtitle mb-2 text-muted">@Model[i].Topic - @Model[i].ResourceType</h6>
             <p class="card-text ">@Model[i].Description</p>
-            <a href="@Model[i].Content" id = "newThread" class="card-link cardDescBorder">View</a>
-            <a data-toggle="modal" href="~/formulas.txt" data-target="#myModal">Click me !</a>
+            <a data-toggle="modal" href="@Model[i].Content" id = "newThread" data-target="#myModal" class="card-link cardDescBorder">View</a>
+<!--            <a data-toggle="modal" href="~/formulas.txt" data-target="#myModal">Click me !</a>-->
             <p class="card-vote"><i class="fa fa-heart "></i> @Model[i].Votes</p>
           </div>
     </div>
